@@ -48,7 +48,7 @@ public class StudentsService {
             return student.getMessage();
         }
 
-        students.remove(student);
+        students.remove(student.getData());
 
         return "Student deleted successfully";
     }

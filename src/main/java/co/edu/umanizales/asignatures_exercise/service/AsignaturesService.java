@@ -53,7 +53,7 @@ public class AsignaturesService {
             return asignature.getMessage();
         }
 
-        asignatures.remove(asignature);
+        asignatures.remove(asignature.getData());
 
         return "Asiganture deleted successfully";
     }
