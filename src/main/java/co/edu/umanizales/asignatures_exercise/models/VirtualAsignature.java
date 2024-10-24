@@ -15,4 +15,8 @@ public class VirtualAsignature extends Asignature {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    public boolean isVirtual() {
+        return true;
+    }
 }

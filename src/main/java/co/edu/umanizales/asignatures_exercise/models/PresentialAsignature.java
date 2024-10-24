@@ -15,4 +15,8 @@ public class PresentialAsignature extends Asignature {
     public void setClassRoom(String classRoom) {
         this.classRoom = classRoom;
     }
+
+    public boolean isVirtual() {
+        return false;
+    }
 }
