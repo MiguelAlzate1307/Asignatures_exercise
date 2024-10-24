@@ -4,21 +4,21 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class Asignature {
-    protected byte code;
+    protected String code;
     protected String name;
     protected List<Student> students;
     
-    public Asignature(byte code, String name) {
+    public Asignature(String code, String name) {
         this.code = code;
         this.name = name;
         this.students = new ArrayList<>();
     }
 
-    public byte getCode() {
+    public String getCode() {
         return this.code;
     }
 
-    public void setCode(byte code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

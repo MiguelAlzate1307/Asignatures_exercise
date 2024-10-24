@@ -1,6 +1,5 @@
 package co.edu.umanizales.asignatures_exercise.controller;
 
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,12 +39,12 @@ public class AsignatureController {
     }
 
     @GetMapping("/{code}")
-    public Response<Asignature> getAsignature(@PathVariable byte code) {
+    public Response<Asignature> getAsignature(@PathVariable String code) {
         return asignaturesService.getAsignature(code);
     }
 
     @DeleteMapping("/{code}")
-    public String deleteAsignature(@PathVariable byte code) throws BadRequestException {
+    public String deleteAsignature(@PathVariable String code) {
         return asignaturesService.deleteAsignature(code);
     }
 

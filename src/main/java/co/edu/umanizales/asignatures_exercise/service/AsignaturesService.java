@@ -33,7 +33,7 @@ public class AsignaturesService {
         return this.asignatures;
     }
 
-    public Response<Asignature> getAsignature(byte code) {
+    public Response<Asignature> getAsignature(String code) {
         Asignature asignature = asignatures.stream()
                                            .filter(a -> a.getCode() == code)
                                            .findFirst()
@@ -46,7 +46,7 @@ public class AsignaturesService {
         return new Response<Asignature>(asignature, null);
     }
 
-    public String deleteAsignature(byte code) {
+    public String deleteAsignature(String code) {
         Response<Asignature> asignature = getAsignature(code);
 
         if (asignature.getMessage() != null) {
@@ -58,7 +58,7 @@ public class AsignaturesService {
         return "Asiganture deleted successfully";
     }
 
-    public Response<Asignature> addStudent(byte code, Student student) {
+    public Response<Asignature> addStudent(String code, Student student) {
         Response<Asignature> existingAsignature = getAsignature(code);
 
         if (existingAsignature.getMessage() != null) {

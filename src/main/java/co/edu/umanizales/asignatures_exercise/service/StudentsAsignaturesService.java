@@ -18,7 +18,7 @@ public class StudentsAsignaturesService {
     @Autowired
     private AsignaturesService asignaturesService;
 
-    public Response<Asignature> enrollStudent(byte code, byte id) {
+    public Response<Asignature> enrollStudent(String code, byte id) {
         Response<Student> student = studentsService.getStudent(id);
 
         if (student.getMessage() != null) {

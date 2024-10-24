@@ -21,7 +21,7 @@ public class StudentsAsignaturesController {
     private StudentsAsignaturesService studentsAsignaturesService;
 
     @PostMapping("/{code}/{id}")
-    public Response<Asignature> enrollStudent(@PathVariable byte code, @PathVariable byte id) {
+    public Response<Asignature> enrollStudent(@PathVariable String code, @PathVariable byte id) {
         return studentsAsignaturesService.enrollStudent(code, id);
     }
 
