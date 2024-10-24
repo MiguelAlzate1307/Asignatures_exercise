@@ -1,11 +1,11 @@
 package co.edu.umanizales.asignatures_exercise.models;
 
-public class Students {
+public class Student {
     private byte id;
-    private byte name;
+    private String name;
     private String gender;
     
-    public Students(byte id, byte name, String gender) {
+    public Student(byte id, String name, String gender) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -19,11 +19,11 @@ public class Students {
         this.id = id;
     }
 
-    public byte getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(byte name) {
+    public void setName(String name) {
         this.name = name;
     }
 

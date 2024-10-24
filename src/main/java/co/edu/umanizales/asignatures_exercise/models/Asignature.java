@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public abstract class Asignature {
     protected byte code;
     protected String name;
-    protected List<Students> students;
+    protected List<Student> students;
     
     public Asignature(byte code, String name) {
         this.code = code;
@@ -30,11 +30,11 @@ public abstract class Asignature {
         this.name = name;
     }
 
-    public List<Students> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Students> students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 
