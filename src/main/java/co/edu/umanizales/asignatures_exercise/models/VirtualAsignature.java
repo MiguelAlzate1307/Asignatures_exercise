@@ -16,6 +16,7 @@ public class VirtualAsignature extends Asignature {
         this.platform = platform;
     }
 
+    @Override
     public boolean isVirtual() {
         return true;
     }

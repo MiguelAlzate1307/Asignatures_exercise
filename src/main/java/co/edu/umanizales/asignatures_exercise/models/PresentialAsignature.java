@@ -16,6 +16,7 @@ public class PresentialAsignature extends Asignature {
         this.classRoom = classRoom;
     }
 
+    @Override
     public boolean isVirtual() {
         return false;
     }
