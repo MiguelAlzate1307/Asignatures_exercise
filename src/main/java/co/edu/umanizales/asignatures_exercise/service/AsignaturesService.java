@@ -1,6 +1,7 @@
 package co.edu.umanizales.asignatures_exercise.service;
 
 import co.edu.umanizales.asignatures_exercise.models.Asignature;
+import co.edu.umanizales.asignatures_exercise.models.Student;
 import co.edu.umanizales.asignatures_exercise.util.Response;
 
 import java.util.List;
@@ -55,5 +56,28 @@ public class AsignaturesService {
         asignatures.remove(asignature);
 
         return "Asiganture deleted successfully";
+    }
+
+    public Response<Asignature> addStudent(byte code, Student student) {
+        Response<Asignature> existingAsignature = getAsignature(code);
+
+        if (existingAsignature.getMessage() != null) {
+            return new Response<>(null, "Asignature not found");
+        }
+
+        List<Student> students = existingAsignature.getData().getStudents();
+
+        Student studentExists = students.stream()
+                                        .filter(e -> e.getId() == student.getId())
+                                        .findFirst()
+                                        .orElse(null);
+
+        if (studentExists != null) {
+            return new Response<>(null, "Student is already enrolled");
+        }
+
+        existingAsignature.getData().addStudent(student);
+
+        return new Response<Asignature>(existingAsignature.getData(), null);
     }
 }
