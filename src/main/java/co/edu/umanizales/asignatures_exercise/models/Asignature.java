@@ -1,8 +1,11 @@
 package co.edu.umanizales.asignatures_exercise.models;
 
+import java.util.List;
+
 public class Asignature {
     protected byte code;
     protected String name;
+    List<Students> students;
     
     public Asignature(byte code, String name) {
         this.code = code;
